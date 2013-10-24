@@ -74,7 +74,7 @@
 		var evs_password = tinyMCEPopup.getWindowArg('evs_password');
 		var evs_api = evs_location+'/api.php';
 		
-		$('.wp_evs_insert_link').live('click', function() {
+		$('body').delegate('.wp_evs_insert_link', 'click', function() {
 			var file_ref = $(this).parent().parent().attr('wp_evs_file_id');
 			var parts = file_ref.split('::');
 			var file_id = parts[0];
@@ -99,7 +99,7 @@
 			});
 		});
 		
-		$('#wp_evs_files .wp_evs_actions a').live('click', function(event) {
+		$('#wp_evs_files').delegate('tbody .wp_evs_actions a', 'click', function() {
 			if(event) event.stopPropagation();
 		});
 		
@@ -145,10 +145,10 @@
 </head>
 <body>
 	<div id="tabs">
-		<div class="tab first"><a href="remote_video.html?v=9-3">Embed a video</a></div>
-		<div class="tab second"><a href="remote_splittest.html?v=9-3">Embed a split test</a></div>
-		<div class="tab third active"><a href="remote_playlist.html?v=9-3">Embed a playlist</a></div>
-		<div class="tab fourth"><a href="basic_embed.html?v=9-3">Enter code manually</a></div>
+		<div class="tab first"><a href="remote_video.html?v=10-1">Embed a video</a></div>
+		<div class="tab second"><a href="remote_splittest.html?v=10-1">Embed a split test</a></div>
+		<div class="tab third active"><a href="remote_playlist.html?v=10-1">Embed a playlist</a></div>
+		<div class="tab fourth"><a href="basic_embed.html?v=10-1">Enter code manually</a></div>
 	</div>
 	
 	<form name="source" action="#" id="wp_evs_form">

@@ -16,7 +16,7 @@
 			// Register commands
 			ed.addCommand('mceWPEVS', function(ui) {
 				ed.windowManager.open({
-					file : url + '/basic_embed.html?v=9-3',
+					file : url + '/basic_embed.html?v=10-1',
 					width : 500,
 					height : 400,
 					inline : 1

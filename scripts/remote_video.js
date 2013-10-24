@@ -21,7 +21,7 @@
 			// Register commands
 			ed.addCommand('mceWPEVSRemote', function(ui) {
 				ed.windowManager.open({
-					file : url + '/remote_video.html?v=9-3',
+					file : url + '/remote_video.html?v=10-1',
 					width : 800,
 					height : 600,
 					inline : 1

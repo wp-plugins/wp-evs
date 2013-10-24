@@ -1,0 +1,7 @@
+[data-role="evp-video"] object,
+[data-role="evp-splittest"] object,
+[data-role="evp-playlist"] object { max-width: auto !important; max-width: auto; }
+
+[data-role="evp-video"] video,
+[data-role="evp-splittest"] video,
+[data-role="evp-playlist"] video { max-width: auto !important; max-width: auto; }
