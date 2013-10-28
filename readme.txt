@@ -40,6 +40,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 
 == Changelog ==
 
+= 1.1.2 =
+* Improved CSS to try and prevent theme conflicts
+
 = 1.1.1 =
 * Fixed playlist and split test embedding in new WordPress
 

@@ -1,7 +1,7 @@
-[data-role="evp-video"] object,
-[data-role="evp-splittest"] object,
-[data-role="evp-playlist"] object { max-width: auto !important; max-width: auto; }
-
 [data-role="evp-video"] video,
-[data-role="evp-splittest"] video,
-[data-role="evp-playlist"] video { max-width: auto !important; max-width: auto; }
+[data-role="evp-splittest"] object,
+[data-role="evp-playlist"] embed { max-width: none !important; max-width: none; }
+
+[data-role="evp-video"] img,
+[data-role="evp-splittest"] img,
+[data-role="evp-playlist"] img { max-width: none !important; max-width: none; }
