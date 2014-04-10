@@ -18,7 +18,7 @@
 	#wp_evs_form { font-size: 13px; width: 760px; margin: 0 auto; }
 	#wp_evs_form	.title { color: #000; font-size: 14px; margin: 0 0 10px 0; }
 	
-	#wp_evs_folders, #wp_evs_files { margin: 0 0 10px 0; background: #fff; border: 1px solid #cccccc; }
+	#wp_evs_folders, #wp_evs_files { margin: 0 0 10px 0; background: #fff; border: 1px solid #cccccc; height: 359px; overflow: scroll; }
 	#wp_evs_folders { width: 280px; margin: 0 10px 0 0; float: left; }
 	#wp_evs_files { width: 465px; float: left; }
 	.wp_evs_table { width: 100%; color: #000; }
@@ -45,7 +45,13 @@
 	#wp_evs_folders tbody tr {  }
 	#wp_evs_folders tbody tr a { text-decoration: none; }
 	#wp_evs_folders tbody tr.subfolder {  }
-	#wp_evs_folders tbody tr.subfolder td:first-child { padding-left: 20px; }
+	#wp_evs_folders tbody tr.subfolder-depth-0 td:first-child { padding-left: 20px; }
+	#wp_evs_folders tbody tr.subfolder-depth-1 td:first-child { padding-left: 40px; }
+	#wp_evs_folders tbody tr.subfolder-depth-2 td:first-child { padding-left: 60px; }
+	#wp_evs_folders tbody tr.subfolder-depth-3 td:first-child { padding-left: 80px; }
+	#wp_evs_folders tbody tr.subfolder-depth-4 td:first-child { padding-left: 100px; }
+	#wp_evs_folders tbody tr.subfolder-depth-5 td:first-child { padding-left: 120px; }
+	#wp_evs_folders tbody tr.subfolder-depth-6 td:first-child { padding-left: 140px; }
 	
 	#wp_evs_files thead tr td { padding: 5px 10px 5px 0; }
 	#wp_evs_files tbody tr td { padding: 5px 10px 5px 0; }
@@ -134,7 +140,7 @@
 						response.folders.unshift({'id': '0', 'name': 'Uncategorised', 'files': response.uncategorised_files});
 					}
 					
-					var folder_arr = {};
+					var folder_arr = {}, subfolder_arr = {}, handled_subs = [];
 					
 					// Create the folders
 					$('#wp_evs_folders tbody').empty();
@@ -143,15 +149,34 @@
 						var f = $('<tr id="evs-folder-'+folder.id+'" class="'+((current_folder == folder.folder_id || current_folder == folder.id) ? 'current' : '')+'"><td><a href="remote_video.html?folder_id='+(folder.folder_id || folder.id)+'">'+(folder.folder_name || folder.name)+'</a></td><td style="text-align:center;">'+(folder.file_count || folder.files)+'</td>');
 						f.appendTo($('#wp_evs_folders tbody'));
 						folder.el = f;
-						folder_arr[idx] = folder;
+						folder_arr[folder.folder_id || folder.id] = folder;
+						if(folder.parent_id) subfolder_arr[folder.folder_id || folder.id] = folder;
 					});
 					
+					$.each(subfolder_arr, function(idx, folder) {
+						var parent = $('#evs-folder-'+folder.parent_id), depth = 0;
+						if(parent.length >= 1) {
+							
+							var search = folder.parent_id;
+							while(folder_arr[search].parent_id != null) {
+								search = folder_arr[search].parent_id;
+								depth++;
+							}
+							
+							folder.el.insertAfter($('#evs-folder-'+folder.parent_id));
+							folder.el.addClass('subfolder subfolder-depth-'+depth);
+							handled_subs.push(idx);
+						}
+					});
+					
+					/*
 					$.each(folder_arr, function(idx, folder) {
 						if(folder.parent_id && $('#evs-folder-'+folder.parent_id).length >= 1) {
 							folder.el.insertAfter($('#evs-folder-'+folder.parent_id));
 							folder.el.addClass('subfolder');
 						}
 					});
+					*/
 					
 					var link_preview = (response.version == '3.0' ? '/admin/files.embed.php' : '/account/files_preview.php');
 					var link_settings = (response.version == '3.0' ? '/admin/files.settings.php' : '/account/files_code.php');

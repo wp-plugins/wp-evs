@@ -3,10 +3,10 @@
 Plugin Name: WP-EVS (EasyVideoSuite WordPress plugin)
 Plugin URI: http://easyvideosuite.com/
 Description: Plugin to easily embed EasyVideoSuite videos into WordPress posts!
-Date: 2013, October, 28
+Date: 2014, April, 10
 Author: WebActix
 Author URI: http://webactix.com
-Version: 1.1.2
+Version: 1.1.3
 */
 
 // Helpers
