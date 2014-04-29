@@ -2,7 +2,7 @@
 Contributors: easyvideoplayer
 Tags: video, evs, easy video suite, easyvideosuite
 Requires at least: 2.8
-Tested up to: 3.8.2
+Tested up to: 3.9
 Stable tag: trunk
 
 Easily embed EasyVideoSuite videos into WordPress posts, even with the visual editor!
@@ -39,6 +39,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 Set up the plugin as explained in the installation instructions, and then click on the button on the post (or page!) editor. The plugin will fetch your list of split tests right from your EasyVideoSuite installation and you can click on them to insert them into your post.
 
 == Changelog ==
+
+= 1.1.4 =
+* Fixed conflict with SimplePress forum plugin
 
 = 1.1.3 =
 * Fixed support for deep nesting of folders
