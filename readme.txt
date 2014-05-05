@@ -40,6 +40,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 
 == Changelog ==
 
+= 1.1.5 =
+* Fixed an distortion issue with certain themes
+
 = 1.1.4 =
 * Fixed conflict with SimplePress forum plugin
 
