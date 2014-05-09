@@ -40,6 +40,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 
 == Changelog ==
 
+= 1.1.6 =
+* Improved support for overriding custom themes' CSS - should prevent video distortion
+
 = 1.1.5 =
 * Fixed an distortion issue with certain themes
 
