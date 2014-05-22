@@ -40,6 +40,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 
 == Changelog ==
 
+= 1.1.7 =
+* Same improved distortion-prevention for EVP2 videos
+
 = 1.1.6 =
 * Improved support for overriding custom themes' CSS - should prevent video distortion
 
