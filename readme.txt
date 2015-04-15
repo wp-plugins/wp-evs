@@ -40,6 +40,9 @@ Set up the plugin as explained in the installation instructions, and then click 
 
 == Changelog ==
 
+= 1.1.12 =
+* Added support for 'popup' embed code, via the 'Enter code manually' option
+
 = 1.1.11 =
 * Fixed infinite loop issue
 
